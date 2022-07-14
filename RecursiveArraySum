@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println(sum([]int{2, 5, 6, 7, 10}))
+}
+
+func sum(arr []int) int {
+	if len(arr) == 1 {
+		return arr[0]
+	}
+	last := len(arr) - 1
+	return arr[last] + sum(arr[:last])
+}
